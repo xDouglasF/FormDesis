@@ -1,0 +1,29 @@
+#Crear tablas
+
+create table candidato (
+	idcandidato serial primary key,
+	candidato varchar(100)
+);
+
+create table region (
+	idregion serial primary key,
+	region varchar(100)
+);
+
+create table comuna (
+	idcomuna serial primary key,
+	comuna varchar(100) not null,
+	idregion int references region(idregion)
+);
+
+create table voto (
+	rut varchar(14) primary key,
+	nombre_y_apellido varchar(100) not null,
+	alias varchar(100) not null,
+	email varchar(100) not null unique,
+	idregion int references region(idregion),
+	idcomuna int references comuna(idcomuna),
+	idcandidato int references candidato(idcandidato),
+	conocio varchar(50) not null
+);
+

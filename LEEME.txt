@@ -1,0 +1,50 @@
+Versiones
+-PHP 8.2.4
+-PostgreSQL 14.0
+
+Pasos a seguir:
+1.Para instalar PHP en mi computador, primeramente instale XAMPP el cual se encuentra
+basicamente buscando xampp en internet y se instalaria facilmente.
+
+2.Luego asumiendo que PostgreSQL 14.0 esta instalado, abriran XAMPP y en el
+modulo de Apache se deberan ir a la opción "Config" y seleccionan "PHP(php.ini)",
+dentro del archivo que se abrira tienen que buscar las siguientes extensiones:
+	extension=pdo_pgsql;
+	extension=pdo_sqlite;
+	extension=pgsql;
+si notan en estas extensiones hay un punto y coma ";" al final de cada extension el 
+cual tienen que borrar y dejar así:
+	extension=pdo_pgsql
+	extension=pdo_sqlite
+	extension=pgsql
+luego guardan y listo. PHP estará habilitado para establecer conexión con PostgreSQL.
+
+3.Crear base de datos: Para crear la base de datos les dejare el backup en tipo .SQL
+con encoding UTF-8 para restaurarla correctamente, aunque si ese archivo no funciona por X
+motivo, les dejare tambien los archivos .TXT los cuales contienen todas las funciones
+para crear la base de datos. Se parte obviamente con los create table, los cuales estan
+ordenados como se deberian ingresar para que las relaciones entre tablas se creen 
+correctamente. Luego se deben poblar las tablas, donde las querys estan en el archivo
+"poblarTablas.txt", donde igualmente las querys estan en orden para que se ingresen
+correctamente las foreign key de region-comuna.
+
+4. La conexión entre PHP y PostgreSQL esta escrita en el archivo conexionDB.php, en
+el cual solo tiene que cambiar los valores de conexión por los propios suyos, es decir,
+debe cambiar $_host, $_db, $_user, $_pass por los valores que usted necesite para
+establecer conexion a la base de datos que usted creara.
+
+5.Finalmente para poder ejecutar el formulario y que exista comunicación entre HTML Y PHP,
+obviamente debe levantar el servidor PHP para que el metodo Fetch pueda comunicarse a
+esas rutas. Listo! El formulario deberia funcionar sin ningún problema.
+
+PD: Las validaciones se encuentran en validaciones.js las cuales algunas fueron resueltas
+con expresiones regulares, otras con funciones de "escucha" si es que se esta modificando
+la variable, y la validación de ver si se duplica el voto por el rut se valida sola,
+ya que al momento de hacer ingreso de los datos, la base de datos detectara automáticamente
+si existe ese rut en el sistema y no dejara ingresarlo porque no pueden existir dos primary
+key con el mismo valor. Por otra parte, como el problema no pide alertas no las realice, solo
+hice validaciones para que los datos que ingresen a la base de datos esten correctos y con 
+todos los requerimientos que se solicitan en la prueba de diagnostico. Tambien dejare una 
+imagen que contiene el modelo relacional de la base de datos por si quieren ver o entender 
+el funcionamiento de esta.
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
+
+    <title>Document</title>
+</head>
+<body>
+    <h4>FORMULARIO DE VOTACIÓN:</h4>
+    <form id="Formulario" class="Formulario">
+        <!-- Nombre y Apellido -->
+        <label for="nombre" style="margin-bottom: 2px;">Nombre y Apellido</label>
+        <input type="text" id="nombre" name="nombre" style="margin-left: 82px; margin-bottom: 2px;width: 175px;"><br>
+
+        <!-- Alias -->
+        <label for="alias" style="margin-bottom: 2px;">Alias</label>
+        <input type="text" id="alias" name="alias" style="margin-left: 172px; margin-bottom: 2px;width: 175px;"><br>
+
+        <!-- RUT -->
+        <label for="rut" style="margin-bottom: 2px;">RUT</label>
+        <input type="text" id="rut" name="rut" placeholder="Ej: 11111111-1" style="margin-left: 174px;margin-bottom: 2px;width: 175px;"><br>
+
+        <!-- Email -->
+        <label for="email" style="margin-bottom: 2px;">Email</label>
+        <input type="email" id="email" name="email" style="margin-left: 168px;margin-bottom: 2px;width: 175px;"><br>
+
+        <!-- Región -->
+        <label for="region" style="margin-bottom: 2px;">Región</label>
+        <select name="region" id="region" style="margin-left: 160px;margin-bottom: 2px;width: 183px;">
+            <option value=0>-</option>
+        </select><br>
+
+        <!-- Comuna -->
+        <label for="comuna" style="margin-bottom: 2px;">Comuna</label>
+        <select name="comuna" id="comuna" style="margin-left: 152px;margin-bottom: 2px;width: 183px;">
+            <option value=0>-</option>
+        </select><br>
+
+        <!-- Candidato -->
+        <label for="candidato" style="margin-bottom: 2px;">Candidato</label>
+        <select name="candidato" id="candidato" style="margin-left: 140px;margin-bottom: 2px;width: 183px;">
+            <option value=0>-</option>
+        </select><br>
+
+        <!-- Como se enteró de Nosotros -->
+        <label for="como">Como se enteró de Nosotros</label>
+        <input type="checkbox" name="checkbox" id="web" value="Web" style="margin-left: 30px;">
+        <label for="web">Web</label>
+        <input type="checkbox" name="checkbox" id="tv" value="TV">
+        <label for="tv">TV</label>
+        <input type="checkbox" name="checkbox" id="redes" value="Redes Sociales">
+        <label for="redes">Redes Sociales</label>
+        <input type="checkbox" name="checkbox" id="amigo" value="Amigo">
+        <label for="amigo">Amigo</label>
+
+        <br><br><br>
+
+        <input type="submit" name="Votar" id="votar" value="Votar">
+
+    </form>
+</body>
+<script src="combobox_functions.js"></script>
+<script src="validaciones.js"></script>
+</html>
